@@ -8,8 +8,8 @@ with cleansed_subscriptions as (
 )
 
 select
-    cl.user_id,
-    cl.plan,
+    cs.user_id,
+    cs.plan,
     case
         when
             plan in ('Business', 'Diamond', 'Gold', 'Platinum', 'Premium') then 'High'
@@ -18,9 +18,9 @@ select
         else
             'Low'
     end as subscription_importance,
-    cl.status,
-    cl.payment_term,
-    cl.payment_method,
-    cl.subscription_term
+    cs.status,
+    cs.payment_term,
+    cs.payment_method,
+    cs.subscription_term
 from
-    cleansed_subscriptions as cl
+    cleansed_subscriptions as cs
