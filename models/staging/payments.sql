@@ -1,8 +1,11 @@
-WITH src_payments AS (
-    SELECT * FROM workshop_mds.mongodb_payments
+with src_payments as (
+    select
+        *
+    from
+        workshop_mds.mongodb_payments
 )
 
-SELECT
+select
     sp.user_id,
     sp.city,
     sp.race,
@@ -10,5 +13,5 @@ SELECT
     sp.currency,
     sp.credit_card_type,
     sp.subscription_price
-FROM
-    src_payments AS sp
+from
+    src_payments as sp

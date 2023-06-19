@@ -1,8 +1,11 @@
-WITH src_user AS (
-    SELECT * FROM workshop_mds.mongodb_user
+with src_user as (
+    select 
+        *
+    from 
+        workshop_mds.mongodb_user
 )
 
-SELECT
+select
     su.id,
     su.user_id,
     su.username,
@@ -10,5 +13,5 @@ SELECT
     su.employment,
     su.credit_card,
     su.subscription
-FROM
-    src_user AS su
+from
+    src_user as su

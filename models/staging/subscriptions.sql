@@ -1,13 +1,16 @@
-WITH src_subscriptions AS (
-    SELECT * FROM workshop_mds.mongodb_subscriptions
+with src_subscriptions as (
+    select
+        *
+    from
+        workshop_mds.mongodb_subscriptions
 )
 
-SELECT
+select
     ss.user_id,
     ss.plan,
     ss.status,
     ss.payment_term,
     ss.payment_method,
     ss.subscription_term
-FROM
-    src_subscriptions AS ss
+from
+    src_subscriptions as ss
